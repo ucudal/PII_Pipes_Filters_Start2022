@@ -43,8 +43,9 @@ namespace CompAndDel
             PipeSerial twitter1 = new PipeSerial(new FilterTwitter(), newPipeNull);
             PipeSerial negative1 = new PipeSerial(new FilterNegative(), newPipeNull);
             PipeConditional pipeconditional = new PipeConditional(conditional, negative1, twitter1, conditional.Indicator);
-            PipeSerial new = new PipeSerial(new FilterGreyscale(), pipeconditional);
-            new.Send(picture);
+            PipeSerial niu = new PipeSerial(new FilterGreyscale(), pipeconditional);
+            niu.Send(picture);
+            
         }
     }
 }
